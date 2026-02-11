@@ -1,0 +1,50 @@
+.div1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.divage {
+  display: flex;
+}
+
+.divmain{
+  border: 1px solid;
+  border-radius: 20px;
+  background-color: white;
+ }
+
+.span1 {
+  border-radius: 20px;
+  color: rgb(67, 56, 202);
+  background-color: rgb(238, 242, 255);
+  padding: 0.25rem;
+}
+
+.h3 {
+  color: rgb(26, 26, 46);
+  display: block;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 19.2px;
+}
+
+.spase{
+    padding: 1rem;
+}
+
+.online{
+    background-color: rgb(220, 252, 231);
+    color: rgb(22, 101, 52);
+}
+
+.no-online{
+  background-color: rgb(254, 242, 242);
+  color: rgb(220, 38, 38);
+}
+
+.btn{
+  border-radius: 10px;
+}

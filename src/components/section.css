@@ -1,0 +1,15 @@
+.section{
+    /* width: 200px; */
+    border: 2px solid;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+
+}
+.span{
+    background-color: white;
+    margin: 0.75rem;
+}
