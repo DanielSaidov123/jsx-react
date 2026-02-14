@@ -1,27 +1,16 @@
 import "./CardStudent.css";
-export default function CardStudent({
-  name,
-  isOnline,
-  age,
-  subjects,
-  grade,
-  setDataStudents,
-}) {
-  function toggleOnline() {
-    setDataStudents((prev) =>
-      prev.map((s) => {
-        if (s.name === name) {
-          return { ...s, isOnline: !isOnline };
-        }
-        return s;
-      }),
-    );
+export default function CardStudent({id,name,isOnline,age,subjects,grade,setDataStudents}) {
+
+  function studentid( ) {
+      setDataStudents(prev=>  prev.map(s=>s.id===id?{...s ,isOnline:!s.isOnline}:s))
   }
+
+
   return (
     <main className="divmain">
       <div className="div1 spase">
         <h3 className="h3">{name}</h3>
-        <button onClick={toggleOnline} className="">
+        <button onClick={()=>  studentid()} >
           {isOnline && <div className="online">online</div>}
           {!isOnline && <div className="no-online">offline</div>}
         </button>

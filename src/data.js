@@ -48,7 +48,7 @@ const students = [
     subjects: ["Art", "Design", "Photography"],
   },
   {
-    id: 4,
+    id: 7,
     name: "Diana Martinez",
     age: 21,
     grade: 95,
@@ -56,7 +56,7 @@ const students = [
     subjects: ["Computer Science", "Data Science", "Statistics", "Linear Algebra"],
   },
   {
-    id: 5,
+    id: 8,
     name: "Ethan Brown",
     age: 23,
     grade: 58,
@@ -64,7 +64,7 @@ const students = [
     subjects: ["Philosophy", "Sociology"],
   },
   {
-    id: 6,
+    id: 9,
     name: "Fiona Wilson",
     age: 20,
     grade: 88,

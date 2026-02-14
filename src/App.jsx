@@ -6,29 +6,41 @@ import CardStudent from "./components/CardStudent";
 import students from "./data";
 function App() {
   const [dataStudents ,setDataStudents]=useState(students)
-  // const[count ,setcount]=
-  function sum() {
-    const total = dataStudents.reduce((i, student) => i + student.grade, 0);
-    return total / dataStudents.length;
-  }
-  function isonline() {
-    const coun = dataStudents.filter((student) => student.isOnline);
-    return coun.length
-  }
-
-
-  function a( ) {
-     const coun = dataStudents.filter((student) => student.grade >90);
-    return coun.length
-  }
-  return (
+  const [activeSection, setActiveSection] = useState("all");
+function countIsOnline() {
+  return dataStudents.reduce((acc, s) => {
+    if (s.isOnline) acc++;
+    return acc;
+  }, 0);
+}
+function HonorRoll( ) {
+  return dataStudents.reduce((acc,s)=>{
+    if(s.grade >=90)acc++;
+    return acc
+  },0)
+}
+function avgGrade() {
+  const total = dataStudents.reduce((acc, s) => acc + s.grade, 0);
+  return (total / dataStudents.length).toFixed(2);  
+}
+function filterisonline() {
+   const d=students.filter((s)=>s.isOnline===true)
+   setDataStudents(d)
+    setActiveSection("online"); 
+}
+function filterHonorRoll(){
+  const honorroll = students.filter((s)=>s.grade>=90)
+  setDataStudents(honorroll)
+   setActiveSection("honor");
+}
+  return (    
     <>
       <Header />
       <div className="gridSection">
-        <Section number={dataStudents.length} p="Total Students" />
-        <Section number={isonline()} p="Online Now" />
-        <Section number={a()} p="Honor Roll" />
-        <Section number={`${sum()}%`} p="Avg Grade" />
+        <Section onClick={()=>{setActiveSection("all"),setDataStudents(students)}}number={dataStudents.length} p="Total Students"  />
+        <Section onClick={filterisonline} number={countIsOnline()} p="Online Now"/>
+        <Section onClick={filterHonorRoll} number={HonorRoll()} p="Honor Roll"/>
+        <Section number={`${avgGrade()}%`} p="Avg Grade" />
       </div>
       <div className="divstudent">
         {dataStudents.map((student) => (
